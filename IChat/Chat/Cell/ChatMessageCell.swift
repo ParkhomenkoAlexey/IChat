@@ -14,6 +14,9 @@ class ChatMessageCell: UITableViewCell {
     
     static let reuseId = "MessageCell"
     
+    private var leadingConstraint: NSLayoutConstraint!
+    private var trailingConstraint: NSLayoutConstraint!
+    
     let messageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -43,9 +46,13 @@ class ChatMessageCell: UITableViewCell {
         if message.isIncoming {
             bubbleBackgroundView.backgroundColor = UIColor(white: 0.85, alpha: 1)
             messageLabel.textColor = .black
+            leadingConstraint.isActive = true
+            trailingConstraint.isActive = false
         } else {
             bubbleBackgroundView.backgroundColor = .black
             messageLabel.textColor = .white
+            leadingConstraint.isActive = false
+            trailingConstraint.isActive = true
         }
     }
     
@@ -55,10 +62,11 @@ class ChatMessageCell: UITableViewCell {
         addSubview(messageLabel)
 
         messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 32).isActive = true
-        messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32).isActive = true
         messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32).isActive = true
-//        messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive = true
         messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 250).isActive = true
+        
+        leadingConstraint = messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32)
+        trailingConstraint = messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32)
 
         bubbleBackgroundView.topAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -16).isActive = true
         bubbleBackgroundView.leadingAnchor.constraint(equalTo: messageLabel.leadingAnchor, constant: -16).isActive = true
