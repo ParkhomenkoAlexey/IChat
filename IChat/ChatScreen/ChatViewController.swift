@@ -16,6 +16,7 @@ class ChatViewController: UIViewController, ChatDisplayLogic {
 
   var interactor: ChatBusinessLogic?
   var router: (NSObjectProtocol & ChatRoutingLogic)?
+    var table = UITableView()
     
   // MARK: Setup
   
@@ -39,12 +40,33 @@ class ChatViewController: UIViewController, ChatDisplayLogic {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setup()
+    
     view.backgroundColor = .red
+    setupTableView()
+    setup()
   }
+    
+    func setupTableView() {
+        table.dataSource = self
+        table.delegate = self
+    }
   
   func displayData(viewModel: Chat.Model.ViewModel.ViewModelData) {
 
   }
   
+}
+
+extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath)
+        cell.textLabel?.text = "\(indexPath.row)"
+        return cell
+    }
+    
+    
 }

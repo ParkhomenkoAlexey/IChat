@@ -7,31 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0CB0E9B23A5316900F9F687 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CB0E9A23A5316900F9F687 /* MessageCell.swift */; };
+		F0ECD38723A2FC4E0079018F /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ECD38623A2FC4E0079018F /* UIViewController + Storyboard.swift */; };
 		F0F09C4223A2EF220054A24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C4123A2EF220054A24C /* AppDelegate.swift */; };
 		F0F09C4423A2EF220054A24C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C4323A2EF220054A24C /* SceneDelegate.swift */; };
 		F0F09C4B23A2EF240054A24C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F09C4A23A2EF240054A24C /* Assets.xcassets */; };
 		F0F09C4E23A2EF240054A24C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F09C4C23A2EF240054A24C /* LaunchScreen.storyboard */; };
-		F0F09C8723A2F1510054A24C /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C8023A2F1510054A24C /* ChatPresenter.swift */; };
-		F0F09C8823A2F1510054A24C /* ChatWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C8123A2F1510054A24C /* ChatWorker.swift */; };
-		F0F09C8923A2F1510054A24C /* ChatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C8223A2F1510054A24C /* ChatRouter.swift */; };
-		F0F09C8A23A2F1510054A24C /* ChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C8323A2F1510054A24C /* ChatModels.swift */; };
-		F0F09C8B23A2F1510054A24C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C8423A2F1510054A24C /* ChatViewController.swift */; };
-		F0F09C8C23A2F1510054A24C /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C8523A2F1510054A24C /* ChatInteractor.swift */; };
+		F0F09C9B23A2F7840054A24C /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C9423A2F7840054A24C /* ChatPresenter.swift */; };
+		F0F09C9C23A2F7840054A24C /* ChatWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C9523A2F7840054A24C /* ChatWorker.swift */; };
+		F0F09C9D23A2F7840054A24C /* ChatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C9623A2F7840054A24C /* ChatRouter.swift */; };
+		F0F09C9E23A2F7840054A24C /* ChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C9723A2F7840054A24C /* ChatModels.swift */; };
+		F0F09C9F23A2F7840054A24C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C9823A2F7840054A24C /* ChatViewController.swift */; };
+		F0F09CA023A2F7840054A24C /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C9923A2F7840054A24C /* ChatInteractor.swift */; };
+		F0F09CA423A2F7D80054A24C /* ChatViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F09CA323A2F7D80054A24C /* ChatViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F0CB0E9A23A5316900F9F687 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		F0ECD38623A2FC4E0079018F /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
 		F0F09C3E23A2EF220054A24C /* IChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F09C4123A2EF220054A24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0F09C4323A2EF220054A24C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F0F09C4A23A2EF240054A24C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0F09C4D23A2EF240054A24C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0F09C4F23A2EF240054A24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0F09C8023A2F1510054A24C /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
-		F0F09C8123A2F1510054A24C /* ChatWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWorker.swift; sourceTree = "<group>"; };
-		F0F09C8223A2F1510054A24C /* ChatRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRouter.swift; sourceTree = "<group>"; };
-		F0F09C8323A2F1510054A24C /* ChatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModels.swift; sourceTree = "<group>"; };
-		F0F09C8423A2F1510054A24C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		F0F09C8523A2F1510054A24C /* ChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
+		F0F09C9423A2F7840054A24C /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
+		F0F09C9523A2F7840054A24C /* ChatWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWorker.swift; sourceTree = "<group>"; };
+		F0F09C9623A2F7840054A24C /* ChatRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRouter.swift; sourceTree = "<group>"; };
+		F0F09C9723A2F7840054A24C /* ChatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModels.swift; sourceTree = "<group>"; };
+		F0F09C9823A2F7840054A24C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		F0F09C9923A2F7840054A24C /* ChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
+		F0F09CA323A2F7D80054A24C /* ChatViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F0CB0E9C23A5317300F9F687 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0CB0E9A23A5316900F9F687 /* MessageCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F0F09C3523A2EF220054A24C = {
 			isa = PBXGroup;
 			children = (
@@ -66,7 +80,8 @@
 			children = (
 				F0F09C4123A2EF220054A24C /* AppDelegate.swift */,
 				F0F09C4323A2EF220054A24C /* SceneDelegate.swift */,
-				F0F09C6323A2EF900054A24C /* ChatScreen */,
+				F0F09CA223A2F78B0054A24C /* Chat */,
+				F0ECD38623A2FC4E0079018F /* UIViewController + Storyboard.swift */,
 				F0F09C4A23A2EF240054A24C /* Assets.xcassets */,
 				F0F09C4C23A2EF240054A24C /* LaunchScreen.storyboard */,
 				F0F09C4F23A2EF240054A24C /* Info.plist */,
@@ -74,17 +89,19 @@
 			path = IChat;
 			sourceTree = "<group>";
 		};
-		F0F09C6323A2EF900054A24C /* ChatScreen */ = {
+		F0F09CA223A2F78B0054A24C /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				F0F09C8423A2F1510054A24C /* ChatViewController.swift */,
-				F0F09C8523A2F1510054A24C /* ChatInteractor.swift */,
-				F0F09C8023A2F1510054A24C /* ChatPresenter.swift */,
-				F0F09C8323A2F1510054A24C /* ChatModels.swift */,
-				F0F09C8123A2F1510054A24C /* ChatWorker.swift */,
-				F0F09C8223A2F1510054A24C /* ChatRouter.swift */,
+				F0CB0E9C23A5317300F9F687 /* Cell */,
+				F0F09CA323A2F7D80054A24C /* ChatViewController.storyboard */,
+				F0F09C9823A2F7840054A24C /* ChatViewController.swift */,
+				F0F09C9923A2F7840054A24C /* ChatInteractor.swift */,
+				F0F09C9423A2F7840054A24C /* ChatPresenter.swift */,
+				F0F09C9723A2F7840054A24C /* ChatModels.swift */,
+				F0F09C9523A2F7840054A24C /* ChatWorker.swift */,
+				F0F09C9623A2F7840054A24C /* ChatRouter.swift */,
 			);
-			path = ChatScreen;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0F09C4E23A2EF240054A24C /* LaunchScreen.storyboard in Resources */,
+				F0F09CA423A2F7D80054A24C /* ChatViewController.storyboard in Resources */,
 				F0F09C4B23A2EF240054A24C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,14 +175,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0F09C8C23A2F1510054A24C /* ChatInteractor.swift in Sources */,
-				F0F09C8923A2F1510054A24C /* ChatRouter.swift in Sources */,
-				F0F09C8B23A2F1510054A24C /* ChatViewController.swift in Sources */,
+				F0F09C9B23A2F7840054A24C /* ChatPresenter.swift in Sources */,
+				F0CB0E9B23A5316900F9F687 /* MessageCell.swift in Sources */,
+				F0F09C9C23A2F7840054A24C /* ChatWorker.swift in Sources */,
+				F0F09CA023A2F7840054A24C /* ChatInteractor.swift in Sources */,
+				F0ECD38723A2FC4E0079018F /* UIViewController + Storyboard.swift in Sources */,
 				F0F09C4223A2EF220054A24C /* AppDelegate.swift in Sources */,
-				F0F09C8A23A2F1510054A24C /* ChatModels.swift in Sources */,
-				F0F09C8723A2F1510054A24C /* ChatPresenter.swift in Sources */,
-				F0F09C8823A2F1510054A24C /* ChatWorker.swift in Sources */,
+				F0F09C9F23A2F7840054A24C /* ChatViewController.swift in Sources */,
+				F0F09C9E23A2F7840054A24C /* ChatModels.swift in Sources */,
 				F0F09C4423A2EF220054A24C /* SceneDelegate.swift in Sources */,
+				F0F09C9D23A2F7840054A24C /* ChatRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
