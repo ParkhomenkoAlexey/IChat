@@ -25,12 +25,14 @@ class ChatInteractor: ChatBusinessLogic {
         switch request {
         case .getMessages:
             print("getMessages")
-            let textMessages = [
-                "Here's my very first message",
-                "I'm going to message another long message that will word wrap",
-                "I'm going to message another long message that will word wrap, I'm going to message another long message that will word wrap, I'm going to message another long message that will word wrap"
+            let chatMessages = [
+                ChatMessage(text: "Here's my very first message", isIncoming: true),
+                ChatMessage(text: "I'm going to message another long message that will word wrap", isIncoming: true),
+                ChatMessage(text: "I'm going to message another long message that will word wrap, I'm going to message another long message that will word wrap, I'm going to message another long message that will word wrap", isIncoming: false),
+                ChatMessage(text: "Yo, dawg, Whaddup!", isIncoming: false),
+                ChatMessage(text: "This message should appear on the left with a white background bubble", isIncoming: true),
             ]
-            presenter?.presentData(response: .presentMessages(messages: textMessages))
+            presenter?.presentData(response: .presentMessages(messages: chatMessages))
         }
     }
     

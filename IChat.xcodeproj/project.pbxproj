@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F0CB0E9B23A5316900F9F687 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CB0E9A23A5316900F9F687 /* MessageCell.swift */; };
+		F0CB0E9B23A5316900F9F687 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CB0E9A23A5316900F9F687 /* ChatMessageCell.swift */; };
 		F0ECD38723A2FC4E0079018F /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ECD38623A2FC4E0079018F /* UIViewController + Storyboard.swift */; };
 		F0F09C4223A2EF220054A24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C4123A2EF220054A24C /* AppDelegate.swift */; };
 		F0F09C4423A2EF220054A24C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09C4323A2EF220054A24C /* SceneDelegate.swift */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F0CB0E9A23A5316900F9F687 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		F0CB0E9A23A5316900F9F687 /* ChatMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
 		F0ECD38623A2FC4E0079018F /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
 		F0F09C3E23A2EF220054A24C /* IChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F09C4123A2EF220054A24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		F0CB0E9C23A5317300F9F687 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				F0CB0E9A23A5316900F9F687 /* MessageCell.swift */,
+				F0CB0E9A23A5316900F9F687 /* ChatMessageCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -176,7 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0F09C9B23A2F7840054A24C /* ChatPresenter.swift in Sources */,
-				F0CB0E9B23A5316900F9F687 /* MessageCell.swift in Sources */,
+				F0CB0E9B23A5316900F9F687 /* ChatMessageCell.swift in Sources */,
 				F0F09C9C23A2F7840054A24C /* ChatWorker.swift in Sources */,
 				F0F09CA023A2F7840054A24C /* ChatInteractor.swift in Sources */,
 				F0ECD38723A2FC4E0079018F /* UIViewController + Storyboard.swift in Sources */,

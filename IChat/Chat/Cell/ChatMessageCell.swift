@@ -1,5 +1,5 @@
 //
-//  MessageCell.swift
+//  ChatMessageCell.swift
 //  IChat
 //
 //  Created by Алексей Пархоменко on 14.12.2019.
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class MessageCell: UITableViewCell {
+class ChatMessageCell: UITableViewCell {
     
     static let reuseId = "MessageCell"
     
@@ -25,7 +25,7 @@ class MessageCell: UITableViewCell {
     let bubbleBackgroundView: UIView = {
        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 5
+        view.layer.cornerRadius = 12
         view.backgroundColor = UIColor(white: 0.85, alpha: 1)
         return view
     }()
@@ -37,7 +37,17 @@ class MessageCell: UITableViewCell {
         
     }
     
-    
+    func set(message: ChatMessage) {
+        messageLabel.text = message.text
+        
+        if message.isIncoming {
+            bubbleBackgroundView.backgroundColor = UIColor(white: 0.85, alpha: 1)
+            messageLabel.textColor = .black
+        } else {
+            bubbleBackgroundView.backgroundColor = .black
+            messageLabel.textColor = .white
+        }
+    }
     
     func setupConstraints() {
         
@@ -47,7 +57,8 @@ class MessageCell: UITableViewCell {
         messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 32).isActive = true
         messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32).isActive = true
         messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32).isActive = true
-        messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive = true
+//        messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive = true
+        messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 250).isActive = true
 
         bubbleBackgroundView.topAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -16).isActive = true
         bubbleBackgroundView.leadingAnchor.constraint(equalTo: messageLabel.leadingAnchor, constant: -16).isActive = true

@@ -18,15 +18,18 @@ enum Chat {
         }
         struct Response {
             enum ResponseType {
-                case presentMessages(messages: [String])
+                case presentMessages(messages: [ChatMessage])
             }
         }
         struct ViewModel {
             enum ViewModelData {
-                case displayMessages(messages: [String])
+                case displayMessages(messages: [ChatMessage])
             }
         }
     }
 }
 
-
+struct ChatMessage {
+    let text: String
+    let isIncoming: Bool
+}

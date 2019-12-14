@@ -15,7 +15,7 @@ protocol ChatDisplayLogic: class {
 
 class ChatViewController: UIViewController, ChatDisplayLogic {
     
-    var messages: [String] = []
+    var messages: [ChatMessage] = []
     var interactor: ChatBusinessLogic?
     var router: (NSObjectProtocol & ChatRoutingLogic)?
     @IBOutlet weak var table: UITableView!
@@ -47,7 +47,7 @@ class ChatViewController: UIViewController, ChatDisplayLogic {
     }
     
     func setupTable() {
-        table.register(MessageCell.self, forCellReuseIdentifier: MessageCell.reuseId)
+        table.register(ChatMessageCell.self, forCellReuseIdentifier: ChatMessageCell.reuseId)
         table.separatorStyle = .none
     }
     
@@ -67,10 +67,11 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.reuseId, for: indexPath) as! MessageCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChatMessageCell.reuseId, for: indexPath) as! ChatMessageCell
         
         let message = messages[indexPath.row]
-        cell.messageLabel.text = message
+//        cell.messageLabel.text = message
+        cell.set(message: message)
         return cell
     }
 }
