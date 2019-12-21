@@ -24,7 +24,6 @@ class AuthService {
     
     func register(with model: RegisterModel, completion: () -> Void) {
         guard let email = model.email, let password = model.password else { return }
-        print("model.email: \(model.email) model.password: \(model.email)")
         auth.createUser(withEmail: email, password: password) { (result, error) in
             if error != nil {
                 print("\(error?.localizedDescription)")

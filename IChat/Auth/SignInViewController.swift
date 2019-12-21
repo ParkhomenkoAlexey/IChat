@@ -24,6 +24,11 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Decorator.decorate(self)
+        updateDoneButtonStatus()
+    }
+    
+    private func updateDoneButtonStatus() {
+        signInButton.isEnabled = registerModel.isFilled
     }
     
     private func photoViewClicked() {
@@ -36,8 +41,6 @@ class SignInViewController: UIViewController {
 // MARK: - @IBActions
     
     @IBAction func signInPressed(_ sender: Any) {
-        registerModel.password = passwordTextField.text
-        registerModel.email = emailTextField.text
         AuthService.shared.register(with: registerModel) {
             self.showAlert(with: "Успешно", and: "Вы зарегистрированны!")
         }
@@ -51,6 +54,27 @@ class SignInViewController: UIViewController {
         let index = sexSegmentedControl.selectedSegmentIndex
         let sex: Sex = index == 0 ? .male : .female
         registerModel.sex = sex
+        updateDoneButtonStatus()
+    }
+    
+    @IBAction func firstnameChanged(_ sender: UITextField) {
+        registerModel.firstname = sender.text ?? ""
+        updateDoneButtonStatus()
+    }
+    
+    @IBAction func lastnameChanged(_ sender: UITextField) {
+        registerModel.lastname = sender.text ?? ""
+        updateDoneButtonStatus()
+    }
+    
+    @IBAction func emailChanged(_ sender: UITextField) {
+        registerModel.email = sender.text ?? ""
+        updateDoneButtonStatus()
+    }
+    
+    @IBAction func passwordChanged(_ sender: UITextField) {
+        registerModel.password = sender.text ?? ""
+        updateDoneButtonStatus()
     }
 }
 
@@ -64,6 +88,7 @@ extension SignInViewController: UINavigationControllerDelegate, UIImagePickerCon
         
         registerModel.photo = image
         profileImage.image = image
+        updateDoneButtonStatus()
     }
 }
 
@@ -76,6 +101,7 @@ extension SignInViewController {
         vc.profileImage.layer.borderColor = #colorLiteral(red: 0.7450980392, green: 0.7450980392, blue: 0.7450980392, alpha: 1)
         vc.profileImage.layer.borderWidth = 1
         vc.profileImage.contentMode = .scaleAspectFill
+        vc.errorLabel.isHidden = true
         
         // layoutSubviews
         vc.profileImage.layer.cornerRadius = vc.profileImage.frame.height / 2
