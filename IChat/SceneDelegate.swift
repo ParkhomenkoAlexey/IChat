@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let chatVC: ChatViewController = ChatViewController.loadFromStoryboard()
-        window?.rootViewController = chatVC
+        let auth: AuthViewController = AuthViewController.loadFromStoryboard()
+        window?.rootViewController = auth
         window?.makeKeyAndVisible()
     }
 
