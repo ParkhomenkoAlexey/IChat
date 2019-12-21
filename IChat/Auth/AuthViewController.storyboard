@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="k8s-Vp-367">
-                                <rect key="frame" x="155" y="405" width="104" height="86"/>
+                                <rect key="frame" x="40" y="736" width="334" height="86"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXc-3Q-0kx">
-                                        <rect key="frame" x="0.0" y="0.0" width="104" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Регистрация"/>
                                         <connections>
@@ -28,7 +28,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Py-BE-gTC">
-                                        <rect key="frame" x="0.0" y="53" width="104" height="33"/>
+                                        <rect key="frame" x="0.0" y="53" width="334" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Авторизация"/>
                                         <connections>
@@ -41,8 +41,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="k8s-Vp-367" firstAttribute="centerX" secondItem="6Rd-VK-2fI" secondAttribute="centerX" id="eDr-pk-NQd"/>
-                            <constraint firstItem="k8s-Vp-367" firstAttribute="centerY" secondItem="6Rd-VK-2fI" secondAttribute="centerY" id="o1G-NQ-0Z6"/>
+                            <constraint firstItem="k8s-Vp-367" firstAttribute="leading" secondItem="3Bl-SP-bwE" secondAttribute="leading" constant="40" id="5l5-l8-fvN"/>
+                            <constraint firstItem="3Bl-SP-bwE" firstAttribute="bottom" secondItem="k8s-Vp-367" secondAttribute="bottom" constant="40" id="Poq-Lh-cOS"/>
+                            <constraint firstItem="3Bl-SP-bwE" firstAttribute="trailing" secondItem="k8s-Vp-367" secondAttribute="trailing" constant="40" id="WkV-fn-rA3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Bl-SP-bwE"/>
                     </view>
@@ -126,30 +127,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="x2S-h3-1HQ">
-                                <rect key="frame" x="30" y="30" width="354" height="370.5"/>
+                                <rect key="frame" x="30" y="30" width="354" height="589.5"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bZW-mC-Lxu">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="148"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FUQ-2c-nX4">
+                                                <rect key="frame" x="127" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="79N-OX-6A7"/>
+                                                    <constraint firstAttribute="width" constant="100" id="dTZ-Oc-VTr"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAq-Zr-iei">
+                                                <rect key="frame" x="162" y="100" width="30" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addPhotoTapped:" destination="RmN-qn-VYW" eventType="touchUpInside" id="Ipx-PM-p0g"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iA2-MS-q98">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                        <rect key="frame" x="0.0" y="168" width="354" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQh-vj-G7P">
-                                        <rect key="frame" x="0.0" y="70" width="354" height="50"/>
+                                        <rect key="frame" x="0.0" y="238" width="354" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Почта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bd1-qh-BpJ">
-                                        <rect key="frame" x="0.0" y="140" width="354" height="50"/>
+                                        <rect key="frame" x="0.0" y="308" width="354" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uo2-G6-Ynq">
-                                        <rect key="frame" x="0.0" y="210" width="354" height="50"/>
+                                        <rect key="frame" x="0.0" y="378" width="354" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Z8Z-cr-1nW">
+                                        <rect key="frame" x="0.0" y="448" width="354" height="32"/>
+                                        <segments>
+                                            <segment title="Male"/>
+                                            <segment title="Femail"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="chooseSexTapped:" destination="RmN-qn-VYW" eventType="valueChanged" id="1Zw-6a-38x"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwX-mK-ilU">
-                                        <rect key="frame" x="0.0" y="280" width="354" height="50"/>
+                                        <rect key="frame" x="0.0" y="499" width="354" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="zXj-1J-tOU"/>
                                         </constraints>
@@ -160,17 +193,17 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeQ-ky-dyI">
-                                        <rect key="frame" x="0.0" y="350" width="354" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="569" width="354" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Uo2-G6-Ynq" firstAttribute="height" secondItem="iA2-MS-q98" secondAttribute="height" id="1dc-1c-oYi"/>
-                                    <constraint firstItem="EQh-vj-G7P" firstAttribute="height" secondItem="iA2-MS-q98" secondAttribute="height" id="mtO-s3-Lu9"/>
-                                    <constraint firstItem="KwX-mK-ilU" firstAttribute="height" secondItem="iA2-MS-q98" secondAttribute="height" id="paz-Bd-x5Q"/>
-                                    <constraint firstItem="Bd1-qh-BpJ" firstAttribute="height" secondItem="iA2-MS-q98" secondAttribute="height" id="sjJ-xS-meU"/>
+                                    <constraint firstItem="Bd1-qh-BpJ" firstAttribute="height" secondItem="iA2-MS-q98" secondAttribute="height" id="1ds-O1-yIi"/>
+                                    <constraint firstItem="Uo2-G6-Ynq" firstAttribute="height" secondItem="iA2-MS-q98" secondAttribute="height" id="dh5-bn-Xbp"/>
+                                    <constraint firstItem="EQh-vj-G7P" firstAttribute="height" secondItem="iA2-MS-q98" secondAttribute="height" id="iDB-PW-fv7"/>
+                                    <constraint firstItem="KwX-mK-ilU" firstAttribute="height" secondItem="iA2-MS-q98" secondAttribute="height" id="lNI-h6-1rr"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -189,6 +222,8 @@
                         <outlet property="firstNameTextField" destination="iA2-MS-q98" id="v6X-eg-Nwm"/>
                         <outlet property="lastNameTextField" destination="EQh-vj-G7P" id="3j0-Db-ou1"/>
                         <outlet property="passwordTextField" destination="Uo2-G6-Ynq" id="Y7w-lC-XaV"/>
+                        <outlet property="profileImage" destination="FUQ-2c-nX4" id="1K5-Xh-FMc"/>
+                        <outlet property="sexSegmentedControl" destination="Z8Z-cr-1nW" id="ZpW-9Y-9X7"/>
                         <outlet property="signInButton" destination="KwX-mK-ilU" id="V9l-RJ-JwW"/>
                     </connections>
                 </viewController>
