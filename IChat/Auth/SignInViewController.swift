@@ -41,8 +41,13 @@ class SignInViewController: UIViewController {
 // MARK: - @IBActions
     
     @IBAction func signInPressed(_ sender: Any) {
-        AuthService.shared.register(with: registerModel) {
-            self.showAlert(with: "Успешно", and: "Вы зарегистрированны!")
+        AuthService.shared.register(with: registerModel) { (result) in
+            switch result {
+            case .success:
+                self.showAlert(with: "Успешно", and: "Вы зарегистрированы!")
+            case .failure(let error):
+                self.showAlert(with: "Ошибка", and: error.localizedDescription)
+            }
         }
     }
     
@@ -86,9 +91,11 @@ extension SignInViewController: UINavigationControllerDelegate, UIImagePickerCon
             return
         }
         
+        
         registerModel.photo = image
         profileImage.image = image
         updateDoneButtonStatus()
+        
     }
 }
 

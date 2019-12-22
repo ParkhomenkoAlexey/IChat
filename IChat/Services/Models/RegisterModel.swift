@@ -28,8 +28,8 @@ class RegisterModel {
     
     var dict: [String: Any] {
         return [
-            "firstname": sex.rawValue,
-            "lastname": sex.rawValue,
+            "firstname": firstname ?? "",
+            "lastname": lastname ?? "",
             "email": email ?? "",
             "password": password ?? "",
             "sex": sex.rawValue
