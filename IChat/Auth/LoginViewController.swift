@@ -21,7 +21,15 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonPressed(_ sender: Any) {
-
+        AuthService.shared.login(email: emailTextField.text!, password: passwordTextField.text!) { (result) in
+            switch result {
+            case .success:
+                self.showAlert(with: "Успешно", and: "Вы авторизированны")
+                print("1223")
+            case .failure(let error):
+                self.showAlert(with: "Ошибка", and: error.localizedDescription)
+            }
+        }
     }
     
 }

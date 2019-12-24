@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,13 +16,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
        
-        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let auth: AuthViewController = AuthViewController.loadFromStoryboard()
-        window?.rootViewController = auth
-        window?.makeKeyAndVisible()
+        
+        let authListener = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                // menu screen
+                let friendsListVC = FriendsListTableViewController()
+                let navigationVC = UINavigationController(rootViewController: friendsListVC)
+                self.window?.rootViewController = navigationVC
+                self.window?.makeKeyAndVisible()
+            } else {
+                
+                let auth: AuthViewController = AuthViewController.loadFromStoryboard()
+                self.window?.rootViewController = auth
+                self.window?.makeKeyAndVisible()
+            }
+        }
+        
+        
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

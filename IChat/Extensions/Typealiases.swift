@@ -13,7 +13,18 @@ enum Result<Value> {
     case failure(Error)
 }
 
+enum VoidResult {
+    case success
+    case failure(Error)
+}
+
+
+enum AuthResult {
+    case success
+    case failure(String)
+}
+
 typealias ItemClosure<T> = ((T) -> Void)
-typealias OptionalItemClosure<T> = ((T?) -> Void)
 typealias VoidClosure = (() -> Void)
 typealias ResultHandler<Value> = (Result<Value>) -> Void
+typealias VoidResultHandler = (VoidResult) -> Void

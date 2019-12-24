@@ -21,6 +21,17 @@ class AuthService {
         ref.child("users")
     }
     
+    func login(email: String, password: String, completion: @escaping VoidResultHandler) {
+        auth.signIn(withEmail: email, password: password) { (result, error) in
+            guard let result = result else {
+                completion(.failure(error!))
+                return
+            }
+            completion(.success)
+            
+        }
+    }
+    
     func register(with model: RegisterModel, completion: @escaping (Result<Void>) -> Void) {
         
         guard model.isFilled else {
@@ -55,7 +66,7 @@ class AuthService {
             StorageService.shared.upload(photo: photo) { (result) in
                 switch result {
                 case .success(let avatarURL):
-                    dict["avatarURL"] = avatarURL.absoluteString
+                    dict["avatarURL"] = avatarURL.absoluteString // проверить + "jpg"
                     currentUserRef.setValue(dict) { (error, ref) in
                         if let error = error {
                             completion(.failure(error))
@@ -67,7 +78,7 @@ class AuthService {
                     completion(.failure(error))
                 }
             }
-        }
-    }
+        } // createUser
+    } // register
 }
 
