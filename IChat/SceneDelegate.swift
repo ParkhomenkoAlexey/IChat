@@ -13,31 +13,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        let authListener = Auth.auth().addStateDidChangeListener { (auth, user) in
+        let _ = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                // menu screen
-                let friendsListVC = FriendsListTableViewController()
-                let navigationVC = UINavigationController(rootViewController: friendsListVC)
-                self.window?.rootViewController = navigationVC
+                let storyboard = UIStoryboard(name: "ListViewController", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "NavigationViewController") as! UINavigationController
+                self.window?.rootViewController = controller
                 self.window?.makeKeyAndVisible()
             } else {
-                
                 let auth: AuthViewController = AuthViewController.loadFromStoryboard()
                 self.window?.rootViewController = auth
                 self.window?.makeKeyAndVisible()
             }
         }
-        
-        
-        
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
