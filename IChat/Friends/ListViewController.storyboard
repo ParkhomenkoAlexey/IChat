@@ -14,7 +14,19 @@
                     <view key="view" contentMode="scaleToFill" id="fKU-t4-iP8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tut-eG-hgl">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TMo-5V-mtN" firstAttribute="bottom" secondItem="Tut-eG-hgl" secondAttribute="bottom" id="5U7-8L-cDN"/>
+                            <constraint firstItem="TMo-5V-mtN" firstAttribute="trailing" secondItem="Tut-eG-hgl" secondAttribute="trailing" id="Y8O-ou-tq0"/>
+                            <constraint firstItem="Tut-eG-hgl" firstAttribute="top" secondItem="TMo-5V-mtN" secondAttribute="top" id="YIZ-oj-J8F"/>
+                            <constraint firstItem="Tut-eG-hgl" firstAttribute="leading" secondItem="TMo-5V-mtN" secondAttribute="leading" id="zPO-vB-7iR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TMo-5V-mtN"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Gg-jD-GzV">
@@ -24,6 +36,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="table" destination="Tut-eG-hgl" id="bem-e5-jiq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aah-qm-dPE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

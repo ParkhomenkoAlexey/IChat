@@ -11,7 +11,6 @@
 		F070D88B23AD68E800C21831 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F070D88A23AD68E800C21831 /* GoogleService-Info.plist */; };
 		F070D88E23AD69E200C21831 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F070D88D23AD69E200C21831 /* AuthService.swift */; };
 		F070D89123AD6B1A00C21831 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F070D89023AD6B1A00C21831 /* RegisterModel.swift */; };
-		F099697123B293A900F92F10 /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099697023B293A900F92F10 /* FriendsListTableViewController.swift */; };
 		F099698823B2C31300F92F10 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099698123B2C31300F92F10 /* ListPresenter.swift */; };
 		F099698923B2C31300F92F10 /* ListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099698223B2C31300F92F10 /* ListWorker.swift */; };
 		F099698A23B2C31300F92F10 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099698323B2C31300F92F10 /* ListRouter.swift */; };
@@ -51,7 +50,6 @@
 		F070D88A23AD68E800C21831 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F070D88D23AD69E200C21831 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F070D89023AD6B1A00C21831 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
-		F099697023B293A900F92F10 /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
 		F099698123B2C31300F92F10 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		F099698223B2C31300F92F10 /* ListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWorker.swift; sourceTree = "<group>"; };
 		F099698323B2C31300F92F10 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 		F099696D23B2933C00F92F10 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				F099697023B293A900F92F10 /* FriendsListTableViewController.swift */,
 				F099698F23B2C32300F92F10 /* ListViewController.storyboard */,
 				F099698523B2C31300F92F10 /* ListViewController.swift */,
 				F099698623B2C31300F92F10 /* ListInteractor.swift */,
@@ -365,7 +362,6 @@
 				F099698C23B2C31300F92F10 /* ListViewController.swift in Sources */,
 				F0C21F9923AF9DD000D7A1F4 /* StorageService.swift in Sources */,
 				F0F09C9C23A2F7840054A24C /* ChatWorker.swift in Sources */,
-				F099697123B293A900F92F10 /* FriendsListTableViewController.swift in Sources */,
 				F0F09CA023A2F7840054A24C /* ChatInteractor.swift in Sources */,
 				F099698D23B2C31300F92F10 /* ListInteractor.swift in Sources */,
 				F0ECD38723A2FC4E0079018F /* UIViewController + Storyboard.swift in Sources */,
