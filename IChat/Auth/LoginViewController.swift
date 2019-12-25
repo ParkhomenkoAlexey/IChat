@@ -25,7 +25,6 @@ class LoginViewController: UIViewController {
             switch result {
             case .success:
                 self.showAlert(with: "Успешно", and: "Вы авторизированны")
-                print("1223")
             case .failure(let error):
                 self.showAlert(with: "Ошибка", and: error.localizedDescription)
             }

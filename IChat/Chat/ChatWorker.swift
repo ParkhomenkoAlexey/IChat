@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ChatService {
+class ChatWorker {
     
 }

@@ -15,11 +15,11 @@ protocol ChatBusinessLogic {
 class ChatInteractor: ChatBusinessLogic {
     
     var presenter: ChatPresentationLogic?
-    var service: ChatService?
+    var service: ChatWorker?
     
     func makeRequest(request: Chat.Model.Request.RequestType) {
         if service == nil {
-            service = ChatService()
+            service = ChatWorker()
         }
         
         switch request {

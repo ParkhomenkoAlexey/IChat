@@ -18,6 +18,10 @@
 		F099698C23B2C31300F92F10 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099698523B2C31300F92F10 /* ListViewController.swift */; };
 		F099698D23B2C31300F92F10 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099698623B2C31300F92F10 /* ListInteractor.swift */; };
 		F099699023B2C32300F92F10 /* ListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F099698F23B2C32300F92F10 /* ListViewController.storyboard */; };
+		F099699223B2C73900F92F10 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099699123B2C73900F92F10 /* UserService.swift */; };
+		F099699423B2CD4100F92F10 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099699323B2CD4100F92F10 /* UserProfile.swift */; };
+		F099699623B2CEDB00F92F10 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099699523B2CEDB00F92F10 /* ChatService.swift */; };
+		F099699823B2D95000F92F10 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099699723B2D95000F92F10 /* FirebaseService.swift */; };
 		F0C21F8423AE592100D7A1F4 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C21F8323AE592100D7A1F4 /* AuthViewController.storyboard */; };
 		F0C21F8923AE595600D7A1F4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C21F8623AE595300D7A1F4 /* SignInViewController.swift */; };
 		F0C21F8A23AE595600D7A1F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C21F8723AE595500D7A1F4 /* LoginViewController.swift */; };
@@ -57,6 +61,10 @@
 		F099698523B2C31300F92F10 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		F099698623B2C31300F92F10 /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
 		F099698F23B2C32300F92F10 /* ListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListViewController.storyboard; sourceTree = "<group>"; };
+		F099699123B2C73900F92F10 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		F099699323B2CD4100F92F10 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		F099699523B2CEDB00F92F10 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		F099699723B2D95000F92F10 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		F0C21F8323AE592100D7A1F4 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		F0C21F8623AE595300D7A1F4 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F0C21F8723AE595500D7A1F4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +126,10 @@
 			children = (
 				F070D88F23AD6AE500C21831 /* Models */,
 				F070D88D23AD69E200C21831 /* AuthService.swift */,
+				F099699723B2D95000F92F10 /* FirebaseService.swift */,
 				F0C21F9823AF9DD000D7A1F4 /* StorageService.swift */,
+				F099699523B2CEDB00F92F10 /* ChatService.swift */,
+				F099699123B2C73900F92F10 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -127,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				F070D89023AD6B1A00C21831 /* RegisterModel.swift */,
+				F099699323B2CD4100F92F10 /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -356,6 +368,8 @@
 			files = (
 				F0C21F8A23AE595600D7A1F4 /* LoginViewController.swift in Sources */,
 				F0F09C9B23A2F7840054A24C /* ChatPresenter.swift in Sources */,
+				F099699223B2C73900F92F10 /* UserService.swift in Sources */,
+				F099699423B2CD4100F92F10 /* UserProfile.swift in Sources */,
 				F0CB0E9B23A5316900F9F687 /* ChatMessageCell.swift in Sources */,
 				F099698B23B2C31300F92F10 /* ListModels.swift in Sources */,
 				F099698A23B2C31300F92F10 /* ListRouter.swift in Sources */,
@@ -368,6 +382,7 @@
 				F0C21F8D23AE5D3700D7A1F4 /* UIAlertController + Entension.swift in Sources */,
 				F099698923B2C31300F92F10 /* ListWorker.swift in Sources */,
 				F0C21F8923AE595600D7A1F4 /* SignInViewController.swift in Sources */,
+				F099699823B2D95000F92F10 /* FirebaseService.swift in Sources */,
 				F0C21F9723AF9BD500D7A1F4 /* Validators.swift in Sources */,
 				F0C21F8B23AE595600D7A1F4 /* AuthViewController.swift in Sources */,
 				F070D88E23AD69E200C21831 /* AuthService.swift in Sources */,
@@ -375,6 +390,7 @@
 				F0F09C9F23A2F7840054A24C /* ChatViewController.swift in Sources */,
 				F070D89123AD6B1A00C21831 /* RegisterModel.swift in Sources */,
 				F0C21F9523AF9BBE00D7A1F4 /* Utilities.swift in Sources */,
+				F099699623B2CEDB00F92F10 /* ChatService.swift in Sources */,
 				F099698823B2C31300F92F10 /* ListPresenter.swift in Sources */,
 				F0F09C9E23A2F7840054A24C /* ChatModels.swift in Sources */,
 				F0F09C4423A2EF220054A24C /* SceneDelegate.swift in Sources */,

@@ -11,15 +11,13 @@ import FirebaseAuth
 import FirebaseDatabase
 import Firebase
 
-class AuthService {
+class AuthService: FirebaseService {
     static let shared = AuthService()
-    private init() { }
+    private override init() { }
     
     private let auth = Auth.auth()
-    private let ref = Database.database().reference()
-    private var usersRef: DatabaseReference {
-        ref.child("users")
-    }
+    
+    
     
     func login(email: String, password: String, completion: @escaping VoidResultHandler) {
         auth.signIn(withEmail: email, password: password) { (result, error) in

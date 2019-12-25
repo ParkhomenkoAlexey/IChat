@@ -21,11 +21,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let _ = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
+                
+                UserService.shared.observeUserProfile(uid: user!.uid) { (result) in
+                    switch result {
+                    case .success(let userProfile):
+                        UserService.shared.userProfile = userProfile
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
                 let storyboard = UIStoryboard(name: "ListViewController", bundle: nil)
                 let controller = storyboard.instantiateViewController(withIdentifier: "NavigationViewController") as! UINavigationController
                 self.window?.rootViewController = controller
                 self.window?.makeKeyAndVisible()
             } else {
+                UserService.shared.userProfile = nil
                 let auth: AuthViewController = AuthViewController.loadFromStoryboard()
                 self.window?.rootViewController = auth
                 self.window?.makeKeyAndVisible()

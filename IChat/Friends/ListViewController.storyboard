@@ -30,6 +30,11 @@
                         <viewLayoutGuide key="safeArea" id="TMo-5V-mtN"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Gg-jD-GzV">
+                        <barButtonItem key="leftBarButtonItem" title="Get" id="7eg-k4-m6E">
+                            <connections>
+                                <action selector="getUserInfo:" destination="W6Q-MU-KFU" id="gcR-TO-KLv"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="1j2-6S-5T2">
                             <connections>
                                 <action selector="logOutTapped:" destination="W6Q-MU-KFU" id="9eN-oL-c6e"/>

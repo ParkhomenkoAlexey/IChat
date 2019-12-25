@@ -16,9 +16,23 @@ enum AuthError {
     case photoNotExist
 }
 
+enum UserError {
+    case dictInitialisationError
+    case userProfileUnwrapError
+}
+
+extension UserError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .dictInitialisationError:
+            return NSLocalizedString("Can't convert snapshot.value in dict", comment: "")
+        case .userProfileUnwrapError:
+            return NSLocalizedString("Can't unwrap userProfile", comment: "")
+        }
+    }
+}
+
 extension AuthError: LocalizedError {
-    /// can be created extension for String
-    /// errorDescription is used in Error.localizedDescription
     var errorDescription: String? {
         switch self {
         case .notFilled:
