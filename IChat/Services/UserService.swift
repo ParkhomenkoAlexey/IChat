@@ -9,7 +9,6 @@
 import Foundation
 import Firebase
 
-
 class UserService: FirebaseService {
     static let shared = UserService()
     private override init() { }
@@ -18,6 +17,7 @@ class UserService: FirebaseService {
     func observeUserProfile(uid: String, completion: @escaping ResultHandler<UserProfile>) {
         let userRef = usersRef.child(uid)
         userRef.observe(.value) { (snapshot) in
+            
             var userProfile: UserProfile?
             
             if let dict = snapshot.value as? [String: Any],
@@ -46,7 +46,6 @@ class UserService: FirebaseService {
     func loadingUsers(completion: @escaping ResultHandler<[UserProfile]>) {
         
         usersRef.observe(.value) { (snapshot) in
-            print("32323")
             if let dict = snapshot.value as? [String: [String: Any]] {
                 let users = dict.map { (userDict) -> UserProfile in
                     return UserProfile(uid: userDict.key,

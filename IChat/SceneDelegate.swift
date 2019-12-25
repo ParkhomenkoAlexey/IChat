@@ -26,14 +26,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     switch result {
                     case .success(let userProfile):
                         UserService.shared.userProfile = userProfile
+                        let storyboard = UIStoryboard(name: "ListViewController", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "NavigationViewController") as! UINavigationController
+                        self.window?.rootViewController = controller
+                        self.window?.makeKeyAndVisible()
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
                 }
-                let storyboard = UIStoryboard(name: "ListViewController", bundle: nil)
-                let controller = storyboard.instantiateViewController(withIdentifier: "NavigationViewController") as! UINavigationController
-                self.window?.rootViewController = controller
-                self.window?.makeKeyAndVisible()
+                
             } else {
                 UserService.shared.userProfile = nil
                 let auth: AuthViewController = AuthViewController.loadFromStoryboard()

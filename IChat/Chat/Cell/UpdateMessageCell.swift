@@ -1,5 +1,5 @@
 //
-//  ChatMessageCell.swift
+//  MessageCell.swift
 //  IChat
 //
 //  Created by Алексей Пархоменко on 14.12.2019.
@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class ChatMessageCell: UITableViewCell {
+class MessageCell: UITableViewCell {
     
-    static let reuseId = "MessageCell"
+    static let reuseId = "UpdateMessageCell"
     
     private var leadingConstraint: NSLayoutConstraint!
     private var trailingConstraint: NSLayoutConstraint!
@@ -40,10 +40,17 @@ class ChatMessageCell: UITableViewCell {
         
     }
     
-    func set(message: ChatMessage) {
-        messageLabel.text = message.text
+    func currentSender() -> Sender {
+        let user = UserService.shared.userProfile!
+       return Sender(id: user.uid, displayName: user.displayName)
+    }
+    
+    func set(message: Message) {
+        messageLabel.text = message.content
         
-        if message.isIncoming {
+        // MARK: - third
+        
+        if message.sender == currentSender() {
             bubbleBackgroundView.backgroundColor = UIColor(white: 0.85, alpha: 1)
             messageLabel.textColor = .black
             leadingConstraint.isActive = true
@@ -80,20 +87,20 @@ class ChatMessageCell: UITableViewCell {
     }
 }
 
-//struct MyProvider: PreviewProvider {
-//    static var previews: some View {
-//        ContainterView().edgesIgnoringSafeArea(.all)
-//    }
-//    
-//    struct ContainterView: UIViewControllerRepresentable {
-//        
-//        let chatVC: ChatViewController = ChatViewController.loadFromStoryboard()
-//        func makeUIViewController(context: UIViewControllerRepresentableContext<MyProvider.ContainterView>) -> ChatViewController {
-//            return chatVC
-//        }
-//        
-//        func updateUIViewController(_ uiViewController: MyProvider.ContainterView.UIViewControllerType, context: UIViewControllerRepresentableContext<MyProvider.ContainterView>) {
-//            
-//        }
-//    }
-//}
+struct MyProvider: PreviewProvider {
+    static var previews: some View {
+        ContainterView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainterView: UIViewControllerRepresentable {
+        
+        let chatVC: ChatViewController = ChatViewController.loadFromStoryboard()
+        func makeUIViewController(context: UIViewControllerRepresentableContext<MyProvider.ContainterView>) -> ChatViewController {
+            return chatVC
+        }
+        
+        func updateUIViewController(_ uiViewController: MyProvider.ContainterView.UIViewControllerType, context: UIViewControllerRepresentableContext<MyProvider.ContainterView>) {
+            
+        }
+    }
+}

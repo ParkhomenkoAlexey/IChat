@@ -15,6 +15,10 @@ class UserProfile {
     var avatarURL: URL
     var sex: String
     
+    var displayName: String {
+        return "\(firstname) \(lastname)"
+    }
+    
     init(uid: String, firstname: String, lastname: String, avatarURL: URL, sex: String) {
         self.uid = uid
         self.firstname = firstname

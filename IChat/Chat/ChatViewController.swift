@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import FirebaseFirestore
 
 protocol ChatDisplayLogic: class {
     func displayData(viewModel: Chat.Model.ViewModel.ViewModelData)
@@ -15,8 +16,15 @@ protocol ChatDisplayLogic: class {
 
 class ChatViewController: UIViewController, ChatDisplayLogic {
     
-    var messages: [ChatMessage] = []
+    var asiaMessages: [ChatMessage] = []
     var interactor: ChatBusinessLogic?
+    
+    var user: UserProfile?
+    var channel: Channel?
+    private var messages: [Message] = []
+    private var messageListener: ListenerRegistration?
+        
+    
     var router: (NSObjectProtocol & ChatRoutingLogic)?
     @IBOutlet weak var table: UITableView!
     // MARK: Setup
@@ -43,23 +51,70 @@ class ChatViewController: UIViewController, ChatDisplayLogic {
         super.viewDidLoad()
         setup()
         setupTable()
-        interactor?.makeRequest(request: .getMessages)
+//        interactor?.makeRequest(request: .getMessages)
+        print("user: \(user?.displayName) channel: \(channel?.name)")
+    }
+    
+    // MARK: - Helpers
+    
+    override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(animated)
+      
+      let testMessage = Message(user: user!, content: "I love pizza, what is your favorite kind?")
+      insertNewMessage(testMessage)
+    }
+    
+    private func insertNewMessage(_ message: Message) {
+      guard !messages.contains(message) else {
+        return
+      }
+      messages.append(message)
+      messages.sort()
+      table.reloadData()
     }
     
     func setupTable() {
-        table.register(ChatMessageCell.self, forCellReuseIdentifier: ChatMessageCell.reuseId)
+        table.register(MessageCell.self, forCellReuseIdentifier: MessageCell.reuseId)
         table.separatorStyle = .none
     }
+    
+    // MARK: - first
+    
+   
+    
+    // 2
+    func numberOfMessages(in messagesCollectionView: ChatViewController) -> Int {
+      return messages.count
+    }
+    
+    // 3
+    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: ChatViewController) -> MessageType {
+      return messages[indexPath.section]
+    }
+    
+    // 4
+    func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+      let name = message.sender.displayName
+      return NSAttributedString(string: name,
+                                attributes: [
+                                  .font: UIFont.preferredFont(forTextStyle: .caption1),
+                                  .foregroundColor: UIColor(white: 0.3, alpha: 1)
+      ])
+    }
+    
+    // MARK: - displayData func
     
     func displayData(viewModel: Chat.Model.ViewModel.ViewModelData) {
         switch viewModel {
         case .displayMessages(let messages):
             print("displayMessages")
-            self.messages = messages
-            self.table.reloadData()
+            self.asiaMessages = messages
+            //self.table.reloadData()
         }
     }
 }
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,8 +122,9 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChatMessageCell.reuseId, for: indexPath) as! ChatMessageCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.reuseId, for: indexPath) as! MessageCell
         
+//        let message = asiaMessages[indexPath.row]
         let message = messages[indexPath.row]
 //        cell.messageLabel.text = message
         cell.set(message: message)

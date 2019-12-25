@@ -24,6 +24,9 @@
 		F099699823B2D95000F92F10 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099699723B2D95000F92F10 /* FirebaseService.swift */; };
 		F099699A23B3BF8300F92F10 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099699923B3BF8300F92F10 /* Message.swift */; };
 		F099699C23B3C16100F92F10 /* Extensions+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099699B23B3C16100F92F10 /* Extensions+Encodable.swift */; };
+		F09969A223B3FCFF00F92F10 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09969A123B3FCFF00F92F10 /* Channel.swift */; };
+		F09969A423B4145100F92F10 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09969A323B4145100F92F10 /* Sender.swift */; };
+		F09969B623B426BF00F92F10 /* UpdateMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09969B523B426BF00F92F10 /* UpdateMessageCell.swift */; };
 		F0C21F8423AE592100D7A1F4 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C21F8323AE592100D7A1F4 /* AuthViewController.storyboard */; };
 		F0C21F8923AE595600D7A1F4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C21F8623AE595300D7A1F4 /* SignInViewController.swift */; };
 		F0C21F8A23AE595600D7A1F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C21F8723AE595500D7A1F4 /* LoginViewController.swift */; };
@@ -69,6 +72,9 @@
 		F099699723B2D95000F92F10 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		F099699923B3BF8300F92F10 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		F099699B23B3C16100F92F10 /* Extensions+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Encodable.swift"; sourceTree = "<group>"; };
+		F09969A123B3FCFF00F92F10 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		F09969A323B4145100F92F10 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		F09969B523B426BF00F92F10 /* UpdateMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMessageCell.swift; sourceTree = "<group>"; };
 		F0C21F8323AE592100D7A1F4 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		F0C21F8623AE595300D7A1F4 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F0C21F8723AE595500D7A1F4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +149,9 @@
 			children = (
 				F070D89023AD6B1A00C21831 /* RegisterModel.swift */,
 				F099699323B2CD4100F92F10 /* UserProfile.swift */,
+				F09969A123B3FCFF00F92F10 /* Channel.swift */,
 				F099699923B3BF8300F92F10 /* Message.swift */,
+				F09969A323B4145100F92F10 /* Sender.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				F0CB0E9A23A5316900F9F687 /* ChatMessageCell.swift */,
+				F09969B523B426BF00F92F10 /* UpdateMessageCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -378,6 +387,7 @@
 				F099699423B2CD4100F92F10 /* UserProfile.swift in Sources */,
 				F0CB0E9B23A5316900F9F687 /* ChatMessageCell.swift in Sources */,
 				F099698B23B2C31300F92F10 /* ListModels.swift in Sources */,
+				F09969B623B426BF00F92F10 /* UpdateMessageCell.swift in Sources */,
 				F099698A23B2C31300F92F10 /* ListRouter.swift in Sources */,
 				F099698C23B2C31300F92F10 /* ListViewController.swift in Sources */,
 				F0C21F9923AF9DD000D7A1F4 /* StorageService.swift in Sources */,
@@ -393,6 +403,7 @@
 				F099699823B2D95000F92F10 /* FirebaseService.swift in Sources */,
 				F0C21F9723AF9BD500D7A1F4 /* Validators.swift in Sources */,
 				F0C21F8B23AE595600D7A1F4 /* AuthViewController.swift in Sources */,
+				F09969A223B3FCFF00F92F10 /* Channel.swift in Sources */,
 				F070D88E23AD69E200C21831 /* AuthService.swift in Sources */,
 				F0F09C4223A2EF220054A24C /* AppDelegate.swift in Sources */,
 				F0F09C9F23A2F7840054A24C /* ChatViewController.swift in Sources */,
@@ -400,6 +411,7 @@
 				F0C21F9523AF9BBE00D7A1F4 /* Utilities.swift in Sources */,
 				F099699623B2CEDB00F92F10 /* ChatService.swift in Sources */,
 				F099698823B2C31300F92F10 /* ListPresenter.swift in Sources */,
+				F09969A423B4145100F92F10 /* Sender.swift in Sources */,
 				F0F09C9E23A2F7840054A24C /* ChatModels.swift in Sources */,
 				F0F09C4423A2EF220054A24C /* SceneDelegate.swift in Sources */,
 				F0F09C9D23A2F7840054A24C /* ChatRouter.swift in Sources */,

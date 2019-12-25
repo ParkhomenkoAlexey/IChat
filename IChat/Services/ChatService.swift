@@ -13,8 +13,7 @@ class ChatService: FirebaseService {
     static let shared = ChatService()
     
     func send(message: Message) {
-        guard let dict = message.dictionary else { return }
-        chatsRef.child(message.id).setValue(dict)
+
     }
     
 }
