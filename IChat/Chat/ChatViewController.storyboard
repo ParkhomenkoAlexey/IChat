@@ -16,20 +16,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SOS-2k-mek">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="820"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Bpd-BV-3hA" id="HaM-7j-iM1"/>
                                     <outlet property="delegate" destination="Bpd-BV-3hA" id="s88-gm-T29"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wj8-PL-HMl">
+                                <rect key="frame" x="16" y="828" width="324" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUt-8z-UVl">
+                                <rect key="frame" x="356" y="830" width="42" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="jiS-cI-Z93" firstAttribute="trailing" secondItem="oUt-8z-UVl" secondAttribute="trailing" constant="16" id="1FH-TF-NRp"/>
+                            <constraint firstItem="wj8-PL-HMl" firstAttribute="top" secondItem="SOS-2k-mek" secondAttribute="bottom" constant="8" id="20C-Ut-fg9"/>
                             <constraint firstItem="SOS-2k-mek" firstAttribute="top" secondItem="sX4-FD-6gI" secondAttribute="top" id="RZJ-Lv-YjA"/>
-                            <constraint firstItem="jiS-cI-Z93" firstAttribute="bottom" secondItem="SOS-2k-mek" secondAttribute="bottom" id="fHK-aB-qnE"/>
+                            <constraint firstItem="oUt-8z-UVl" firstAttribute="top" secondItem="SOS-2k-mek" secondAttribute="bottom" constant="10" id="WNQ-Bg-HM5"/>
+                            <constraint firstItem="wj8-PL-HMl" firstAttribute="leading" secondItem="jiS-cI-Z93" secondAttribute="leading" constant="16" id="bYa-cF-6oh"/>
+                            <constraint firstItem="jiS-cI-Z93" firstAttribute="bottom" secondItem="SOS-2k-mek" secondAttribute="bottom" constant="42" id="fHK-aB-qnE"/>
+                            <constraint firstItem="oUt-8z-UVl" firstAttribute="leading" secondItem="wj8-PL-HMl" secondAttribute="trailing" constant="16" id="jSd-wG-zCt"/>
                             <constraint firstItem="jiS-cI-Z93" firstAttribute="trailing" secondItem="SOS-2k-mek" secondAttribute="trailing" id="nBK-N7-slL"/>
+                            <constraint firstItem="jiS-cI-Z93" firstAttribute="bottom" secondItem="oUt-8z-UVl" secondAttribute="bottom" constant="2" id="qcw-OR-JDI"/>
                             <constraint firstItem="SOS-2k-mek" firstAttribute="leading" secondItem="jiS-cI-Z93" secondAttribute="leading" id="sec-fm-Eo9"/>
+                            <constraint firstItem="wj8-PL-HMl" firstAttribute="bottom" secondItem="jiS-cI-Z93" secondAttribute="bottom" id="yx4-4r-gne"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jiS-cI-Z93"/>
                     </view>

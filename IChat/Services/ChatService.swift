@@ -8,11 +8,13 @@
 
 import Foundation
 
-class ChatServicer {
+class ChatService: FirebaseService {
     
+    static let shared = ChatService()
     
-    func send(message: String) {
-        
+    func send(message: Message) {
+        guard let dict = message.dictionary else { return }
+        chatsRef.child(message.id).setValue(dict)
     }
     
 }
